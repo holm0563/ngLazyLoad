@@ -1,7 +1,9 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule, NoPreloading } from "@angular/router";
+// import { customerRoutes } from "./customers/customers-routing.module";
+// import { orderRoutes } from "./orders/orders-routing.module";
 
-const routes: Routes = [
+const lazyRoutes: Routes = [
   {
     path: "customers",
     loadChildren: () =>
@@ -14,8 +16,23 @@ const routes: Routes = [
   }
 ];
 
+// const routes: Routes = [
+//   {
+//     path: "customers",
+//     children: customerRoutes
+//   },
+//   {
+//     path: "orders",
+//     children: orderRoutes
+//   }
+// ];
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(lazyRoutes, {
+      preloadingStrategy: NoPreloading // PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

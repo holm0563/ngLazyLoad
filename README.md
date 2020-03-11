@@ -1,6 +1,6 @@
 # CustomerApp
 
-An example of lazy loading in Angular. See: https://angular.io/guide/lazy-loading-ngmodules
+An example of lazy loading in Angular 9. See: https://angular.io/guide/lazy-loading-ngmodules
 
 Besides following the documentation we are loading multiple child components and verifying if they are being included by console logs.
 
@@ -9,8 +9,8 @@ https://medium.com/angular-in-depth/optimize-angular-bundle-size-in-4-steps-4a3b
 
 ## Know your bundle size
 
-With this light weight example main-es2015.js is 229kB.
-Without lazy loading it would be 233kB.
+With this light weight example main-es2015.js is 215kB (Angular 8: 229kB).
+Without lazy loading it would be 216kB (Angular 8: 233kB).
 
 ## Analyze your Angular bundle
 

@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule, NoPreloading } from "@angular/router";
-import { customerRoutes } from "./customers/customers-routing.module";
-import { orderRoutes } from "./orders/orders-routing.module";
+// import { customerRoutes } from "./customers/customers-routing.module";
+// import { orderRoutes } from "./orders/orders-routing.module";
 
 const lazyRoutes: Routes = [
   {
@@ -16,20 +16,20 @@ const lazyRoutes: Routes = [
   }
 ];
 
-const routes: Routes = [
-  {
-    path: "customers",
-    children: customerRoutes
-  },
-  {
-    path: "orders",
-    children: orderRoutes
-  }
-];
+// const routes: Routes = [
+//   {
+//     path: "customers",
+//     children: customerRoutes
+//   },
+//   {
+//     path: "orders",
+//     children: orderRoutes
+//   }
+// ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
+    RouterModule.forRoot(lazyRoutes, {
       preloadingStrategy: NoPreloading // PreloadAllModules
     })
   ],
